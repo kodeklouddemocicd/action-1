@@ -1,6 +1,6 @@
 name: My First Workflow
 
-On: push
+on: push
 
 jobs: 
     first_jobs:
