@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v6 
 
       - name: List and Read file 
-        run: 
+        run: |
           echo "my first Github Actions Jobs"
           ls -ltra
           cat README.md
