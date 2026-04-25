@@ -16,5 +16,3 @@ jobs:
         run: |
           chomd +x ascii-script.sh
           ./ascii-script.sh
-
-        run: ls -ltra
