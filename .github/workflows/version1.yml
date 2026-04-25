@@ -12,7 +12,7 @@ jobs:
       - name: List repo Files 
         run: ls -ltra
 
-      - name: Execute Cowsay CMD 
+      - name: Executing shell script
         run: ./ascii-script.sh
 
       - name: List repo Files 
