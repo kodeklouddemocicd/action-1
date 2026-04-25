@@ -7,12 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
+      
 
       - name: List repo Files 
         run: ls -ltra
 
       - name: Executing shell script
         run: |
-           chmod +x ./scripts/ascii-script.sh
-           ./ascii-script.sh
+           chmod +X ./scripts/ascii-script.sh
+           ./ascii-script.sh        
