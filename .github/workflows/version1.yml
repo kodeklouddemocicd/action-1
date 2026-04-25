@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v4 
 
       - name: List repo Files 
-        run: ls -ltra
+        run: ls -R
 
       - name: Executing shell script
         run: |
