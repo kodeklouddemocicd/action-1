@@ -13,11 +13,13 @@ jobs:
       - name: Execute Cowsay CMD
         run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
 
-      - name: upload Dragon text file 
-        uses: actions/upload-artifact@v7
+      - run: mkdir -p .github/workflows/job-3.yaml/dragon.txt
+      - run: echo hello > .github/workflows/job-3.yaml/dragon.txt
+      - uses: actions/upload-artifact@v7
         with:
-          name: dragon-text-file
           path: .github/workflows/job-3.yaml/dragon.txt
+          archive: false
+
         
   test_job_2:
       needs: build_job_1
