@@ -17,7 +17,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: dragon-text-file
-          path: .github/workflows/dragon.txt
+          path: .github/workflows/job-3.yaml/dragon.txt
         
   test_job_2:
       needs: build_job_1
