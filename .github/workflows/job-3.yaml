@@ -14,7 +14,7 @@ jobs:
         run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
 
       - run: mkdir -p .github/workflows/job-3.yaml
-      - run: echo cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
+      - run: touch cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
       - uses: actions/upload-artifact@v7
         with:
           path: .github/workflows/job-3.yaml/dragon.txt
