@@ -1,0 +1,10 @@
+name: Generate ASCII Artwork
+on: 
+  push
+
+jobs:
+  Build_job_1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Cowsay program
+        uses: sudo apt-get install cowsay -y 
