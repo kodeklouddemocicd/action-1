@@ -14,17 +14,17 @@ jobs:
         run: cowsay -f dragon "Run for cover, I am a DRAGON....RAWR" >> dragon.txt
 
       - name: upload Dragon text file 
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v7
         with:
           name: dragon-text-file
-          path: .github/workflows/job-3.yaml/dragon.txt
+          path: .github/workflows/dragon.txt
         
   test_job_2:
       needs: build_job_1
       runs-on: ubuntu-latest
       steps:
       - name: Download Dragon text file 
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v7
         with:
           name: dragon-text-file
 
@@ -36,7 +36,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - name: Download Dragon text file 
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v7
         with:
           name: dragon-text-file
 
