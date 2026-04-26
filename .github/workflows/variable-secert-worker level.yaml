@@ -1,0 +1,34 @@
+name: Exploring Variables and Secerts
+
+on:
+  push
+
+
+env: 
+    CONTAINER_REGISTRY: docker.io 
+    DOCKER_USERNAME: itcouldofbeen103
+    IMAGE_NAME: github-actions-nginx
+
+jobs:
+  docker: 
+    runs-on: ubuntu-latest
+    steps: 
+    - name: Docker Build 
+      run: echo docker build -t $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME
+
+    - name: Docker Login 
+      env: 
+        DOCKER_PASSWORD: s3cUrePaSsw0rd
+      run: echo docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD
+#### only use the docker password on the login level thats why its not on the job and env variables are put at the job level to reduce redundency 
+    
+    - name: Docker Publish 
+      run: echo docker push $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME:latest 
+
+
+  deploy:
+    needs: docker   
+    runs-on: ubuntu-latest 
+    steps:
+    - name: docker run 
+      run: echo docker -d -p 8000:80 $CONTAINER_REGISTRY/$DOCKER_USERNAME/$IMAGE_NAME
