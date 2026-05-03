@@ -12,4 +12,17 @@ jobs:
         echo "I made this happen" >> echo.txt
         ls -la
         cat echo.txt
-      
+
+#HOW TO CREATE RUNNNER
+# either at repo, org, or enterpise level you can have own runner
+# 1. settings >> actions: runner >> create runner 
+# 2. follow the steps to install on machine
+# 3. if root change check with "id -u " root is 0
+# 4. add commmand "ALLOW_ROOTASRUNNER" >> finish install
+# 5. run worflow manually on github actions
+# 6. check log on actions
+# check logs on diagram
+# can check logs in the _work file or _diag for logs on vm machine 
+# delete runner from github settings 
+
+# on "workflow_dispatch" means to manually run on workflow 
