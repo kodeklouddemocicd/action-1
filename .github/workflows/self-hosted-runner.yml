@@ -1,0 +1,15 @@
+name: Testing Self-Hosted Runner 
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  testing:
+    runs-on: [self-hosted, Linux, X64, prod main]
+    steps:
+    - name: Run a Echo command 
+      run: |
+        echo "I made this happen" >> echo.txt
+        ls -la
+        cat echo.txt
+      
