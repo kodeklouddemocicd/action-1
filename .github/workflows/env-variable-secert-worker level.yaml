@@ -1,6 +1,7 @@
 name: Exploring Variables and Secerts
 
-on:
+on: 
+   
   push
 
 
